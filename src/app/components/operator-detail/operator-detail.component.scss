@@ -1,0 +1,147 @@
+@import "../../../assets/styles/variables";
+
+.operator-detail-wrap{
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  padding: 0 150px;
+  min-width: 600px;
+  @include respond-to(sm){
+    min-width: 100%;
+    padding: 20px;
+  }
+  @include respond-to(xs){
+    min-width: 100%;
+    padding: 20px;
+  }
+}
+.operator-name{
+  font-size: 30px;
+  color: $color_5;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 20px;
+  @include respond-to(xs){
+    font-size: 24px;
+  }
+}
+.input-wrap{
+  width: 400px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 40px;
+  @include respond-to(sm){
+    width: 100%;
+  }
+  @include respond-to(xs){
+    width: 100%;
+  }
+  input{
+    font-size: 28px;
+    width: 100%;
+    height: 40px;
+    line-height: 38px;
+    padding: 0 5px;
+    display: block;
+    @include border-radius(3px);
+    border: 1px solid $color_3;
+    transition: $trans;
+    color: $color_1;
+    margin-bottom: 20px;
+    text-align: left;
+    font-weight: bold;
+  }
+}
+.label{
+  font-size: 20px;
+  display: block;
+  margin-bottom: 10px;
+  @include respond-to(xs){
+    font-size: 18px;
+  }
+}
+.error, .prefix{
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: -30px;
+  width: 100%;
+  line-height: 38px;
+  padding: 0 5px;
+  font-size: 18px;
+  @include border-radius(3px);
+  border: 1px solid $color_6;
+  color: $color_6;
+}
+
+.prefix{
+  left: -45px;
+  font-size: 28px;
+  color: $color_1;
+  font-weight: bold;
+  border: 0;
+  width: 42px;
+  top: 31px;
+  @include respond-to(xs){
+    top: 30px;
+    left: -40px;
+  }
+}
+.button{
+  width: 60px;
+  height: 40px;
+  line-height: 38px;
+  @include border-radius(3px);
+  border: 1px solid $color_3;
+  transition: $trans;
+  color: $color_1;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  &:hover{
+    background: $color_2;
+  }
+  &.save{
+    border-color: $color_5;
+    color: $color_5;
+    background: transparent;
+    &:disabled{
+      border-color: $color_3;
+      color: $color_4;
+      background: $color_3;
+      cursor: no-drop;
+      &:hover{
+        color: $color_4;
+        background: $color_3;
+      }
+    }
+    &:hover{
+      background: $color_5;
+      color: $color_4;
+    }
+  }
+}
+.response-wrap{
+  position: fixed;
+  background: rgba(0,0,0,0.2);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  .response-text{
+    padding: 20px;
+    font-size: 30px;
+    @include border-radius(5px);
+    border: 1px solid $color_5;
+    background: $color_4;
+    color: $color_5;
+  }
+  .response-error{
+    border-color: $color_6;
+    color: $color_6;
+  }
+}

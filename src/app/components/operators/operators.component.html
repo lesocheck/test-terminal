@@ -1,0 +1,14 @@
+<div class="component-wrap">
+
+  <div *ngIf="!operatorDetailView" class="operators-wrap">
+    <h1>Выберите Вашего мобильного оператора для оплаты</h1>
+    <ul class="list-wrap" *ngIf="operators">
+      <li *ngFor="let operator of operators; let index = index" (click)="viewOperatorDetails(operator, index)" class="operator-item">
+        <span class="operator-name">{{operator.name}}</span>
+      </li>
+    </ul>
+  </div>
+
+  <app-operator-detail  *ngIf="operatorDetailView" [(operator)]="operatorDetails" (onChanged)="onChanged($event)"></app-operator-detail>
+  <button *ngIf="operatorDetailView" (click)="operatorDetailView = !operatorDetailView" class="back-btn">Back</button>
+</div>

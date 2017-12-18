@@ -1,0 +1,96 @@
+@import "../../../assets/styles/variables";
+
+.component-wrap{
+  padding: 20px;
+  height: 100%;
+}
+.operators-wrap{
+  height: 100%;
+}
+.list-wrap{
+  width: 722px;
+  margin: 0 auto;
+  max-height: calc(100% - 50px);
+  overflow: auto;
+  border: 1px solid $color_3;
+  @include border-radius(5px);
+  padding: 30px 30px 10px;
+  @include respond-to(sm){
+    width: 382px;
+  }
+  @include respond-to(xs){
+    width: 100%;
+  }
+}
+.operator-item{
+  cursor: pointer;
+  transition: $trans;
+  @include border-radius(3px);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 5px;
+  width: 150px;
+  height: 150px;
+  float: left;
+  margin: 0 0 20px 20px;
+  border: 1px solid $color_5;
+  background: $color_2;
+  @include respond-to(sm){
+    &:nth-child(2n+1){
+      margin-left: 0;
+    }
+  }
+  @include respond-to(xs){
+    float: none;
+    margin: 0 auto 20px!important;
+    width: 100%;
+  }
+  &:nth-child(4n+1){
+    margin-left: 0;
+  }
+  &:hover{
+    background: $color_5;
+    .operator-name{
+      color: $color_2;
+    }
+  }
+}
+.operator-name{
+  transition: $trans;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.back-btn{
+  border: 0;
+  color: $color_4;
+  background: $color_5;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100px;
+  text-align: center;
+  height: 100%;
+  transition: $trans;
+  font-size: 20px;
+  @include respond-to(sm){
+    left: 5px;
+    top: 5px;
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+    @include border-radius(3px);
+  }
+  @include respond-to(xs){
+    left: 5px;
+    top: 5px;
+    width: 70px;
+    height: 30px;
+    font-size: 18px;
+    @include border-radius(3px);
+  }
+  &:hover{
+    background: #858585;
+  }
+}

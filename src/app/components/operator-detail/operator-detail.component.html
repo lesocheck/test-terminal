@@ -1,0 +1,30 @@
+<div class="operator-detail-wrap">
+  <h1>Введите данные для оплаты</h1>
+
+  <span class="operator-name">{{operator.name}}</span>
+
+  <div class="input-wrap">
+    <span class="label">Введите номер телефона</span>
+    <span class="prefix">+7</span>
+    <input type="text" [(ngModel)]="phone" [textMask]="{mask: maskPhone}" (ngModelChange)="checkPhone($event)">
+    <span class="error" *ngIf="error">{{error}}</span>
+  </div>
+
+  <div class="input-wrap">
+    <span class="label">Введите сумму пополнения</span>
+    <input type="text" [(ngModel)]="sum" [textMask]="{mask: maskSum}" (ngModelChange)="checkSum($event)">
+  </div>
+
+  <button class="button save" (click)="save()" [disabled]="!sum || !phoneValidate">Save</button>
+
+  <div class="response-wrap" *ngIf="response || responseError">
+    <div class="response-text" *ngIf="response">
+      {{response}}
+    </div>
+    <div class="response-text response-error" *ngIf="responseError">
+      {{responseError}}
+  </div>
+  </div>
+
+
+</div>
